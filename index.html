@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto%7CPermanent+Marker" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/45b10146f4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Telepresence Bot</h1>
+  </header>
+  <main>
+    <h2>Control Mode</h2>
+    <fieldset class="control-mode-container">
+      <legend>Set mode</legend>
+      <input 
+        type="radio" 
+        id="pan-tilt-mode" 
+        name="control-mode" 
+        value="pan-tilt-mode"
+        checked>
+      <label for="pan-tilt-mode">Pan & Tilt Camera</label><br>
+      <input 
+        type="radio" 
+        id="maneuver-mode" 
+        name="control-mode" 
+        value="maneuver-mode">
+      <label for="maneuver-mode">Maneuver Bot</label>
+    </fieldset>
+    <h2>Pilot</h2>
+    <div class="arrow-controls-container">
+      <div class="arrow-controls-top-row">
+        <button id="up" class="arrow-button"><i class="fas fa-caret-up fa-2x"></i></button>
+      </div>
+      <div class="arrow-controls-bottom-row">
+        <button id="left" class="arrow-button"><i class="fas fa-caret-left fa-2x"></i></button>
+        <button id="down" class="arrow-button"><i class="fas fa-caret-down fa-2x"></i></button>
+        <button id="right" class="arrow-button"><i class="fas fa-caret-right fa-2x"></i></button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="module" src="index.js"></script>
+</body>
+</html>

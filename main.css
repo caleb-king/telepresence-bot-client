@@ -1,0 +1,83 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: auto;
+  background-color: white;
+}
+
+header {
+  padding-left: 20px;
+  background-color: black;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  color: rgb(63, 72, 204);
+}
+
+main {
+  padding-left: 20px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+.arrow-controls-container {
+  width: 300px;
+}
+
+.arrow-controls-top-row, .arrow-controls-bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.arrow-button {
+  background-color: black;
+  color: white;
+  width: 45px;
+  border: solid rgb(35, 35, 35) 2px;
+  text-align:center;
+  padding: 3% 0;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.active-key {
+  border-color: rgb(63, 72, 204);
+  background-color: rgb(15, 15, 15);
+  color: rgb(63, 72, 204);
+}
+
+.arrow-button:focus {
+  outline: none;
+}
+
+fieldset {
+  max-width: 300px;
+  border-color: black;
+  margin-bottom: 50px;
+}
+
+label {
+  padding: 3px 6px;
+}
+
+input:hover, button:hover, label:hover {
+  cursor: pointer;
+}
+
+input[type="radio"]:checked+label {
+  color: rgb(63, 72, 204);
+  font-weight: bold;
+  text-decoration: underline;
+}
