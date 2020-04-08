@@ -1,3 +1,5 @@
+import api from './api.js';
+
 let controlMode = 'pan-tilt';
 let arrowPressed = null;  
 let robotCommand = null;
@@ -40,12 +42,12 @@ const setRobotCommand = function() {
       break;
     }
   }
-  console.log('ROBOT COMMAND:',this.robotCommand);
+  api.sendCommandToRobot(this.robotCommand);
 };
 
 const clearRobotCommand = function() {
   this.robotCommand = null;
-  console.log('ROBOT COMMAND:','none at this time');
+  api.sendCommandToRobot(this.robotCommand);
 };
 
 export default {
