@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8000/';
+const BASE_URL = 'https://secret-shelf-46048.herokuapp.com/';
 
 const sendCommandToRobot = function(command) {
   console.log('sent command "'+command+'" to bot');
