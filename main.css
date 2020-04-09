@@ -81,3 +81,7 @@ input[type="radio"]:checked+label {
   font-weight: bold;
   text-decoration: underline;
 }
+
+.current-command-container {
+  margin-top: 3em;
+}

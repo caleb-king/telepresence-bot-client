@@ -1,4 +1,4 @@
-import api from './api.js';
+const api = require('./api');
 
 let controlMode = 'pan-tilt';
 let arrowPressed = null;  
@@ -43,11 +43,13 @@ const setRobotCommand = function() {
     }
   }
   api.sendCommandToRobot(this.robotCommand);
+  $('#current-command-value').text(this.robotCommand);
 };
 
 const clearRobotCommand = function() {
   this.robotCommand = 'none';
   api.sendCommandToRobot(this.robotCommand);
+  $('#current-command-value').text(this.robotCommand);
 };
 
 export default {
