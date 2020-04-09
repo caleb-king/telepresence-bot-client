@@ -2,7 +2,7 @@ import api from './api.js';
 
 let controlMode = 'pan-tilt';
 let arrowPressed = null;  
-let robotCommand = null;
+let robotCommand = 'none';
 
 
 const setControlMode = function(mode) {
@@ -46,7 +46,7 @@ const setRobotCommand = function() {
 };
 
 const clearRobotCommand = function() {
-  this.robotCommand = null;
+  this.robotCommand = 'none';
   api.sendCommandToRobot(this.robotCommand);
 };
 
