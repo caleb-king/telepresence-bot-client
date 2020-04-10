@@ -108,6 +108,10 @@ const handleArrowKeyUp = function() {
   });
 };
 
+const handleContextMenuEvent = function() {
+  $('body').on('contextmenu', () => false);
+};
+
 
 const bindEventHandlers = function() {
   handlePanTiltModeChecked();
@@ -118,6 +122,7 @@ const bindEventHandlers = function() {
   // handleArrowButtonMouseLeave();
   handleArrowKeyDown();
   handleArrowKeyUp();
+  handleContextMenuEvent();
 };
 
 const main = function() {
