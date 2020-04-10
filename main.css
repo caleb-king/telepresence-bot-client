@@ -85,3 +85,13 @@ input[type="radio"]:checked+label {
 .current-command-container {
   margin-top: 3em;
 }
+
+p {
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.hide {
+  visibility:hidden;
+}

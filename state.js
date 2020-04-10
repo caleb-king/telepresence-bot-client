@@ -1,6 +1,6 @@
 import api from './api.js';
 
-let controlMode = 'pan-tilt';
+let controlMode = 'maneuver';
 let arrowPressed = null;  
 let robotCommand = 'none';
 
@@ -21,6 +21,9 @@ const clearArrowPressed = function() {
 
 const setRobotCommand = function() {
   if(this.controlMode === 'pan-tilt') {
+    //below line is temporary until pan option is available
+    if(this.arrowPressed === 'left' || this.arrowPressed === 'right') return;
+    
     this.robotCommand = this.arrowPressed;
   } else {
     switch(this.arrowPressed) {

@@ -18,17 +18,20 @@
       <legend>Set mode</legend>
       <input 
         type="radio" 
+        id="maneuver-mode" 
+        name="control-mode" 
+        value="maneuver-mode"
+        onclick="this.blur();"
+        checked>
+      <label for="maneuver-mode">Maneuver Bot</label><br>
+      <input 
+        type="radio" 
         id="pan-tilt-mode" 
         name="control-mode" 
         value="pan-tilt-mode"
-        checked>
-      <label for="pan-tilt-mode">Pan & Tilt Camera</label><br>
-      <input 
-        type="radio" 
-        id="maneuver-mode" 
-        name="control-mode" 
-        value="maneuver-mode">
-      <label for="maneuver-mode">Maneuver Bot</label>
+        onclick="this.blur();">
+      <label for="pan-tilt-mode">Tilt Camera</label>
+      <p>(You can use <strong>spacebar</strong> to toggle between modes)</p>
     </fieldset>
     <h2>Pilot</h2>
     <div class="arrow-controls-container">

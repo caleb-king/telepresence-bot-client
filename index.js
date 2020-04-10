@@ -7,10 +7,21 @@ const endCurrentOperation = function() {
   }
 };
 
+const hidePanControls = function() {
+  $('#left').addClass('hide');
+  $('#right').addClass('hide');
+};
+
+const showPanControls = function() {
+  $('#left').removeClass('hide');
+  $('#right').removeClass('hide');
+};
+
 const handlePanTiltModeChecked = function() {
   $('#pan-tilt-mode').change(() => {
     if (state.controlMode === 'pan-tilt') return;
     state.setControlMode('pan-tilt');
+    hidePanControls();
   });
 };
 
@@ -18,6 +29,26 @@ const handleManeuverModeChecked = function() {
   $('#maneuver-mode').change(() => {
     if (state.controlMode === 'maneuver') return;
     state.setControlMode('maneuver');
+    showPanControls();
+  });
+};
+
+const handleSpacebarUp = function() {
+  $(document).keyup((e) => {
+    if (e.which === 32) {
+      e.preventDefault();
+      if (state.controlMode === 'maneuver') {
+        state.setControlMode('pan-tilt');
+        $('#pan-tilt-mode').prop('checked', true);
+        $('#maneuver-mode').prop('checked', false);
+        hidePanControls();
+      } else {
+        state.setControlMode('maneuver');
+        $('#pan-tilt-mode').prop('checked', false);
+        $('#maneuver-mode').prop('checked', true);
+        showPanControls();
+      }
+    }
   });
 };
 
@@ -68,9 +99,11 @@ const handleArrowKeyDown = function() {
 
 const handleArrowKeyUp = function() {
   $(document).keyup((e) => {
-    if (e.which >= 37 || e.which <= 40) {
-      endCurrentOperation();
-    }
+    if (e.which === 37 && state.arrowPressed !== 'left') return;
+    if (e.which === 38 && state.arrowPressed !== 'up') return;
+    if (e.which === 39 && state.arrowPressed !== 'right') return;
+    if (e.which === 40 && state.arrowPressed !== 'down') return;  
+    endCurrentOperation();
   });
 };
 
@@ -78,6 +111,7 @@ const handleArrowKeyUp = function() {
 const bindEventHandlers = function() {
   handlePanTiltModeChecked();
   handleManeuverModeChecked();
+  handleSpacebarUp();
   handleArrowButtonMouseDown();
   handleArrowButtonMouseUp();
   handleArrowButtonMouseLeave();
