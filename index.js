@@ -54,6 +54,7 @@ const handleSpacebarUp = function() {
 
 const handleArrowButtonMouseDown = function() {
   $('button').on('mousedown touchstart', (e) => {
+    e.preventDefault();
     if(state.arrowPressed) return;
     let direction = $(e.target).closest('button').attr('id');
     state.setArrowPressed(direction);
