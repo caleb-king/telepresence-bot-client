@@ -37,15 +37,8 @@ legend {
 }
 
 .arrow-controls-container {
-  max-width: 300px;
+  max-width: 350px;
   margin-bottom: 1em;
-  -webkit-touch-callout:none;
-  -webkit-user-select:none;
-  -khtml-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  user-select:none;
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 .arrow-controls-top-row, .arrow-controls-bottom-row {
@@ -57,12 +50,15 @@ legend {
 .arrow-button {
   background-color: black;
   color: white;
-  width: 45px;
+  width: 75px;
+  height: 75px;
   border: solid rgb(35, 35, 35) 2px;
   text-align:center;
   padding: 3% 0;
   margin: 2px;
-  border-radius: 5px;
+  border-radius: 10px;
+  -webkit-touch-callout:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 .active-key {
@@ -76,7 +72,7 @@ legend {
 }
 
 fieldset {
-  max-width: 300px;
+  max-width: 350px;
   border-color: black;
 }
 
@@ -103,39 +99,51 @@ p {
   font-size: 12px;
   font-style: italic;
   margin-bottom: 0;
-  margin-left: 35px;
+  margin-top: 5px;
+}
+
+.centering-div {
+  text-align: center;
 }
 
 .hide {
   visibility:hidden;
 }
 
-.small-screen {
-  display: none;
+.arrow-button {
+  width: 75px;
+  height: 75px;
+  padding: 3% 0;
+  margin: 2px;
+  border-radius: 10px;
 }
 
-.big-screen {
-  display: inline-block;
+header {
+  margin-left: 0;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h2{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 412px) {
   header {
     text-align: center;
-    margin-left: 0;
-    padding-left: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
 
   h1 {
     font-size: 30px;
-  }
-
-  h2{
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 
   p {
@@ -152,13 +160,5 @@ p {
     padding: 3% 0;
     margin: 2px;
     border-radius: 10px;
-  }
-
-  .small-screen {
-    display: inline-block;
-  }
-
-  .big-screen {
-    display: none;
   }
 }
