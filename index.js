@@ -53,7 +53,7 @@ const handleSpacebarUp = function() {
 };
 
 const handleArrowButtonMouseDown = function() {
-  $('button').mousedown((e) => {
+  $('button').on('mousedown touchstart', (e) => {
     if(state.arrowPressed) return;
     let direction = $(e.target).closest('button').attr('id');
     state.setArrowPressed(direction);
@@ -62,12 +62,12 @@ const handleArrowButtonMouseDown = function() {
 };
 
 const handleArrowButtonMouseUp = function() {
-  $('button').mouseup(endCurrentOperation);
+  $('button').on('mouseup mouseleave touchend', endCurrentOperation);
 };
 
-const handleArrowButtonMouseLeave = function() {
-  $('button').mouseleave(endCurrentOperation);
-};
+// const handleArrowButtonMouseLeave = function() {
+//   $('button').mouseleave(endCurrentOperation);
+// };
 
 const handleArrowKeyDown = function() {
   $(document).keydown((e) => {
@@ -114,7 +114,7 @@ const bindEventHandlers = function() {
   handleSpacebarUp();
   handleArrowButtonMouseDown();
   handleArrowButtonMouseUp();
-  handleArrowButtonMouseLeave();
+  // handleArrowButtonMouseLeave();
   handleArrowKeyDown();
   handleArrowKeyUp();
 };
