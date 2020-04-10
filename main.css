@@ -14,6 +14,11 @@ header {
   padding-bottom: 20px;
 }
 
+main {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
 h1 {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -32,7 +37,8 @@ legend {
 }
 
 .arrow-controls-container {
-  width: 300px;
+  max-width: 300px;
+  margin-bottom: 1em;
 }
 
 .arrow-controls-top-row, .arrow-controls-bottom-row {
@@ -65,7 +71,6 @@ legend {
 fieldset {
   max-width: 300px;
   border-color: black;
-  margin-bottom: 50px;
 }
 
 label {
@@ -83,15 +88,31 @@ input[type="radio"]:checked+label {
 }
 
 .current-command-container {
-  margin-top: 3em;
+  margin-top: 1em;
+  font-size: 1em;
 }
 
 p {
   font-size: 12px;
   font-style: italic;
   margin-bottom: 0;
+  margin-left: 35px;
 }
 
 .hide {
   visibility:hidden;
+}
+
+@media only screen and (max-width: 374px) {
+  header {
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  main {
+    margin-right: 15px;
+  }
 }
